@@ -5,10 +5,8 @@ public class BulletMove : MonoBehaviour {
     public float maxSpeed = 5f;
     public Vector3 originalSpeed = new Vector3(0f,0f,0f);
 
-    GameObject playerObject;
 	
     void Start() {
-        playerObject = GameObject.FindWithTag("Player");
     }
 	// Update is called once per frame
 	void Update () {
@@ -19,11 +17,5 @@ public class BulletMove : MonoBehaviour {
 
         transform.position = pos;
 
-        // if the bullet is far away from the player,
-        // destroy it
-        float distanceFromPlayer = (playerObject.transform.position - transform.position).magnitude;
-        if (distanceFromPlayer > 10) {
-            Destroy(this.gameObject);
-        }
 	}
 }
