@@ -49,22 +49,23 @@ public class Treasure : MonoBehaviour {
 		}
 
 		else if ( isNear(transform.position) ) { //near treasure
-			message.text = "Press [SPACE] to get Disc and win!";
+			message.text = "Press [SPACE] to get your weapon - DISC!";
 			if (Input.GetKeyDown(KeyCode.Space)){
 				didPlayerWin = true;
                 // enable the player to shoot and destroy the treasure
                 player.GetComponent<PlayerShoot>().enabled = true;
                 Destroy(gameObject);
-
 			}
-			else if (didPlayerWin)
-				message.text = "Congratulations, you win!!!!";
 		}
 
 		else { //not near anything
 			hasMoved = true;
 			message.text = "";
 		}
+
+        if (didPlayerWin) {
+            message.text = "Destroy all enemies to win!";
+        }
 	}
 		
 	private bool isNear(Vector3 other) {

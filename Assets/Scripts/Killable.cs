@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Killable : MonoBehaviour {
 
     public int maxHealth = 100;
     public int currentHealth = 0;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         currentHealth = maxHealth;
 	}
 	
