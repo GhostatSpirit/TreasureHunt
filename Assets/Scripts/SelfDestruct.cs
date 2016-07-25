@@ -16,7 +16,7 @@ public class SelfDestruct : MonoBehaviour {
 
     void Update() {
         // if the bullet is far away from the player,
-        // destroy it
+        // destroy it.
         float distanceFromPlayer = (playerObject.transform.position - transform.position).magnitude;
         if (distanceFromPlayer > 10) {
             Destroy(this.gameObject);

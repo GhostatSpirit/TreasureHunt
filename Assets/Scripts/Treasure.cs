@@ -52,6 +52,10 @@ public class Treasure : MonoBehaviour {
 			message.text = "Press [SPACE] to get Disc and win!";
 			if (Input.GetKeyDown(KeyCode.Space)){
 				didPlayerWin = true;
+                // enable the player to shoot and destroy the treasure
+                player.GetComponent<PlayerShoot>().enabled = true;
+                Destroy(gameObject);
+
 			}
 			else if (didPlayerWin)
 				message.text = "Congratulations, you win!!!!";
